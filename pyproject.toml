@@ -33,6 +33,20 @@ kokoro = "kokoro.__main__:main"
 only-include = ["kokoro"]
 only-packages = true
 
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-xpu", extra = "xpu" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-xpu"
+url = "https://download.pytorch.org/whl/nightly/xpu"
+
 [project.urls]
 Homepage = "https://github.com/hexgrad/kokoro"
 Repository = "https://github.com/hexgrad/kokoro"
+
+[project.optional-dependencies]
+xpu = [
+    "torch>=2.7.0",
+]

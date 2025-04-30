@@ -103,6 +103,17 @@ On Mac M1/M2/M3/M4 devices, you can explicitly specify the environment variable 
 PYTORCH_ENABLE_MPS_FALLBACK=1 python run-your-kokoro-script.py
 ```
 
+### Intel GPU Acceleration
+- Supported Hardware: https://pytorch.org/docs/stable/notes/get_start_xpu.html#hardware-prerequisite
+- Software Prerequisite: https://pytorch.org/docs/stable/notes/get_start_xpu.html#software-prerequisite
+
+Install Kokoro with Intel XPU acceleration (using [uv](https://github.com/astral-sh/uv))
+```bash
+uv venv .venv
+source .venv/bin/activate
+uv sync --extra xpu
+```
+
 ### Conda Environment
 Use the following conda `environment.yml` if you're facing any dependency issues.
 ```yaml
